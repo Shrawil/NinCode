@@ -52,7 +52,7 @@ Note: "float" support is planned for future versions.
 
 ### nin.out
 
-Outputs either a string literal or a variable value.
+**Outputs either a string literal or a variable value.**
 
 ##### Supports escape sequences:
 
@@ -86,15 +86,15 @@ nin.out "Score: " score;
 
 ### nin.setvar
 
-Creates and initializes a variable of any supported data type.
+**Creates and initializes a variable of any supported data type.**
 
 ##### Syntax
 
-nin.setvar dataType variableName value;
+`nin.setvar dataType variableName value;`
 
 ##### Example
 
-nin.setvar int score 10;
+`nin.setvar int score 10;`
 
 This creates a variable:
 
@@ -109,6 +109,7 @@ This creates a variable:
 ##### Example:
 
 `nin.setvar int value 5;`
+
 `nin.setvar str value "five";`
 
 ##### Constraints
@@ -120,7 +121,7 @@ This creates a variable:
 
 ### nin.delay
 
-Pauses execution before the next line runs.
+**Pauses execution before the next line runs.**
 
 ####Syntax
 
@@ -129,6 +130,7 @@ Pauses execution before the next line runs.
 ####Example
 
 `nin.delay;` This will wait 1s.
+
 `nin.delay 3000;` This Will wait 3s.
 
 ######[NOTE] If no time is given, the command will by default wait for 1 second (1000ms) before executing next line.
