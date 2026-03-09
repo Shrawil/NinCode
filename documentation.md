@@ -123,14 +123,30 @@ This creates a variable:
 
 **Pauses execution before the next line runs.**
 
-#### Syntax
+##### Syntax
 
 `nin.delay seconds;`
 
-#### Example
+##### Example
 
 `nin.delay;` This will wait 1s.
 
 `nin.delay 3000;` This Will wait 3s.
 
 ###### [NOTE] If no time is given, the command will by default wait for 1 second (1000ms) before executing next line.
+
+---
+
+### nl
+
+** Add a next line character as nin.out doesn't  a next line character by default. 
+
+##### Syntax 
+
+`nl;`
+
+---
+
+### nin.in
+
+** Takes input from user and stores it inside given variable.
