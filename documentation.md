@@ -58,8 +58,11 @@ Supports escape sequences:
 
 `
 \n  new line
+
 \t  tab
+
 \b  backspace
+
 \r  carriage return
 `
 
