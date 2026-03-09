@@ -1,6 +1,6 @@
-NinCode v1.3 Documentation
+# NinCode v1.3 Documentation
 
-Data Types
+*Data Types*
 
 NinCode currently supports the following data types:
 
@@ -48,7 +48,7 @@ Note: "float" support is planned for future versions.
 
 ---
 
-Current Features
+*Current Features*
 
 1. "nin.out"
 
