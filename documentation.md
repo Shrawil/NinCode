@@ -8,7 +8,7 @@ NinCode currently supports the following data types:
 
 Stores integer values.
 
-Example:
+##### Example:
 
 10
 -5
@@ -16,12 +16,12 @@ Example:
 
 ---
 
-### "str"
+### "astr"
 
 Stores string values.
 A single character is also treated as a string.
 
-Example:
+##### Example:
 
 "Hello"
 "A"
@@ -33,12 +33,12 @@ Example:
 
 Stores boolean values.
 
-Allowed values:
+##### Allowed values:
 
 true
 false
 
-Notes:
+##### Notes:
 
 - "0" and "1" are not allowed as boolean values.
 
@@ -50,11 +50,11 @@ Note: "float" support is planned for future versions.
 
 ## Current Features
 
-### "nin.out"
+### nin.out
 
 Outputs either a string literal or a variable value.
 
-Supports escape sequences:
+##### Supports escape sequences:
 
 `\n  new line`
 
@@ -64,35 +64,35 @@ Supports escape sequences:
 
 `\r  carriage return`
 
-Syntax
+##### Syntax
 
 nin.out argument;
 
-Examples
+##### Examples
 
 `nin.out "Hello World!";`
 
 ` nin.out variableName;`
 
-Constraints
+##### Constraints
 
 - You cannot use a string literal and a variable together in the same command.
 
-Invalid example:
+##### Invalid example:
 
 nin.out "Score: " score;
 
 ---
 
-### "nin.setvar"
+### nin.setvar
 
 Creates and initializes a variable of any supported data type.
 
-Syntax
+##### Syntax
 
 nin.setvar dataType variableName value;
 
-Example
+##### Example
 
 nin.setvar int score 10;
 
@@ -102,32 +102,33 @@ This creates a variable:
 - Type: "int"
 - Value: "10"
 
-Notes
+##### Notes
 
 - Variables of different data types can share the same name.
 
-Example:
+##### Example:
 
 `nin.setvar int value 5;`
 `nin.setvar str value "five";`
 
-Constraints
+##### Constraints
 
 1. "nin.setvar" cannot be used inside loops.
 2. Variables must be initialized when created.
 
 ---
 
-3. "nin.delay"
+### nin.delay
 
 Pauses execution before the next line runs.
 
-Syntax
+####Syntax
 
-nin.delay seconds;
+`nin.delay seconds;`
 
-Example
+####Example
 
-nin.delay 3;
+`nin.delay;` This will wait 1s.
+`nin.delay 3000;` This Will wait 3s.
 
-This waits 3 seconds before executing the next instruction.
+######[NOTE] If no time is given, the command will by default wait for 1 second (1000ms) before executing next line.
