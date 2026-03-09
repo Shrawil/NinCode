@@ -3,6 +3,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Random;
 
+//Creater - Shrawil Srivastava
+
 public class NinCode {
     static boolean error = false;
     static int lineCount = 0;
