@@ -1,35 +1,130 @@
-# Documentation of NinCode v1.3
+NinCode v1.3 Documentation
 
-**DataTypes in NinCode**
-1. int - Stores any integer value.
-2. str - Stores any String value, can be a single character too.
-3. bool - Stores only true/false values (0 & 1 are not allowed).
-[Float are yet to come]
+Data Types
 
+NinCode currently supports the following data types:
 
-**Current features**
-1. nin.out - Outputs a string literal or a variable value. (Also supports escape sequences like \n \t \b \r).
+1. "int"
 
-Syntax : nin.out argument;
+Stores integer values.
 
-Ex.1 nin.out "Hello world!";
+Example:
 
-Ex.2 nin.out varname;
+10
+-5
+0
 
-Constraints - You can not provide string literal and variable both in same nin.out argument. 
+---
 
-2. nin.setvar - Stores a variable of any datatype (int/str/bool).
-Note: Variables of different datatypes can have same name.
+2. "str"
 
-Syntax : nin.setvar dataType varName varValue;
+Stores string values.
+A single character is also treated as a string.
 
-Ex. nin.setvar x y z;
+Example:
 
-Creates a variable names "y" of datatype "x" containing value "z".
+"Hello"
+"A"
+"Game Over"
 
-Constraints - 
+---
 
-a. You can not use setvar inside loops. 
-b. Variables must be initialised when created.
+3. "bool"
 
-3. nin.delay - Waits for n seconds before executing next line.
+Stores boolean values.
+
+Allowed values:
+
+true
+false
+
+Notes:
+
+- "0" and "1" are not allowed as boolean values.
+
+---
+
+Note: "float" support is planned for future versions.
+
+---
+
+Current Features
+
+1. "nin.out"
+
+Outputs either a string literal or a variable value.
+
+Supports escape sequences:
+
+\n  new line
+\t  tab
+\b  backspace
+\r  carriage return
+
+Syntax
+
+nin.out argument;
+
+Examples
+
+nin.out "Hello World!";
+
+nin.out variableName;
+
+Constraints
+
+- You cannot use a string literal and a variable together in the same command.
+
+Invalid example:
+
+nin.out "Score: " score;
+
+---
+
+2. "nin.setvar"
+
+Creates and initializes a variable of any supported data type.
+
+Syntax
+
+nin.setvar dataType variableName value;
+
+Example
+
+nin.setvar int score 10;
+
+This creates a variable:
+
+- Name: "score"
+- Type: "int"
+- Value: "10"
+
+Notes
+
+- Variables of different data types can share the same name.
+
+Example:
+
+nin.setvar int value 5;
+nin.setvar str value "five";
+
+Constraints
+
+1. "nin.setvar" cannot be used inside loops.
+2. Variables must be initialized when created.
+
+---
+
+3. "nin.delay"
+
+Pauses execution before the next line runs.
+
+Syntax
+
+nin.delay seconds;
+
+Example
+
+nin.delay 3;
+
+This waits 3 seconds before executing the next instruction.
