@@ -56,15 +56,13 @@ Outputs either a string literal or a variable value.
 
 Supports escape sequences:
 
-`
-\n  new line
+`\n  new line`
 
-\t  tab
+`\t  tab`
 
-\b  backspace
+`\b  backspace`
 
-\r  carriage return
-`
+`\r  carriage return`
 
 Syntax
 
