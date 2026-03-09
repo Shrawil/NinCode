@@ -1,10 +1,10 @@
 # NinCode v1.3 Documentation
 
-*Data Types*
+## Data Types
 
 NinCode currently supports the following data types:
 
-1. "int"
+### "int"
 
 Stores integer values.
 
@@ -16,7 +16,7 @@ Example:
 
 ---
 
-2. "str"
+### "str"
 
 Stores string values.
 A single character is also treated as a string.
@@ -29,7 +29,7 @@ Example:
 
 ---
 
-3. "bool"
+### "bool"
 
 Stores boolean values.
 
@@ -48,28 +48,28 @@ Note: "float" support is planned for future versions.
 
 ---
 
-*Current Features*
+## Current Features
 
-1. "nin.out"
+### "nin.out"
 
 Outputs either a string literal or a variable value.
 
 Supports escape sequences:
-
+`
 \n  new line
 \t  tab
 \b  backspace
 \r  carriage return
-
+`
 Syntax
 
 nin.out argument;
 
 Examples
 
-nin.out "Hello World!";
+`nin.out "Hello World!";`
 
-nin.out variableName;
+` nin.out variableName;`
 
 Constraints
 
@@ -81,7 +81,7 @@ nin.out "Score: " score;
 
 ---
 
-2. "nin.setvar"
+### "nin.setvar"
 
 Creates and initializes a variable of any supported data type.
 
@@ -105,8 +105,8 @@ Notes
 
 Example:
 
-nin.setvar int value 5;
-nin.setvar str value "five";
+`nin.setvar int value 5;`
+`nin.setvar str value "five";`
 
 Constraints
 
