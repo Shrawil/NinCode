@@ -49,7 +49,7 @@ public class NinCode {
         } 
 
         else {
-            System.out.println("Either wrong type entered or the variable already exists!");
+            System.out.println("\nEither wrong type entered or the variable already exists!");
             callForError();
         }
     }
@@ -80,7 +80,7 @@ public class NinCode {
         } 
 
         else {
-            System.out.println("Syntax Error: Expected ';' at end of line.");
+            System.out.println("\nSyntax Error: Expected ';' at end of line.");
             callForError();
             return;
         }
@@ -88,6 +88,8 @@ public class NinCode {
         String[] lineArgs = line.split(" ");
         String command = lineArgs[0].toLowerCase();
 
+        // nin.out "String\n";
+        // nin.out varName;
         if (command.equals("nin.out")) {
             if (line.contains("\"")) {
                 int start = line.indexOf("\"") + 1;
@@ -104,7 +106,7 @@ public class NinCode {
             }
         } 
         
-        
+        // nl;
         else if (command.equals("nl")) {
             System.out.println();
         } 
@@ -117,14 +119,23 @@ public class NinCode {
         // nin.delay;
         // nin.delay x; 
         // [Where x is any positive integer number!]
-        else if (command.equals("nin.delay") && lineArgs.length <= 2) {
-            if (lineArgs[1] < 1) {
-                System.out.println("Delay value can not be smaller or equal to 0!");
-                callForError();
-                return;
+        else if (command.equals("nin.delay")) {
+            try {
+                int time = 1000;
+                if (lineArgs.length == 2) {
+                    time = intVarName.contains(lineArgs[1]) ? Integer.parseInt(getVar("int", lineArgs[1])) : Integer.parseInt(lineArgs[1]);
+                    if (time < 1) {
+                        System.out.println("\nDelay value can not be smaller or equal to 0!");
+                        callForError();
+                        return;
+                    }
+                }
+                Thread.sleep(time);
             }
-            int time = (lineArgs.length == 2) ? Integer.parseInt(lineArgs[1]) : 1000;
-            Thread.sleep(time);
+            catch (Exception e) {
+                System.out.println("\nArgument must be an integer literal or an integer variable!");
+                callForError();
+            }
         }
 
         // nin.math var1 x + y; [Where x and y must already exist!]
@@ -188,7 +199,7 @@ public class NinCode {
         else if (command.equals("nin.loop")) {
             if (!lineArgs[3].equals("nin.setvar")) {
                 if (!line.contains(":")) {
-                    System.out.println("Not enough argument to perform through loop!");
+                    System.out.println("\nNot enough argument to perform through loop!");
                     callForError();
                     return;
                 }
@@ -201,26 +212,26 @@ public class NinCode {
                     }
                 }
             }
-            else { System.out.println("You can not run \'nin.setvar\' in a loop!"); callForError(); } 
+            else { System.out.println("\nYou can not run \'nin.setvar\' in a loop!"); callForError(); } 
         }
 
         // nin.rand a min max;
-        /*else if (command.equals("nin.rand")) {
+        else if (command.equals("nin.rand")) {
             if (lineArgs.length == 4) {
                 Random random = new Random();
                 int min, max;
-                if (intVal.contains(lineArgs[2])) min = Integer.parseInt(intVal.get(lineArgs[2]));
+                if (intVarName.contains(lineArgs[2])) min = Integer.parseInt(getVar("int", lineArgs[2]));
                 else min = Integer.parseInt(lineArgs[2]);
-                if (intval.contains(lineArgs[3])) max = Integer.parseInt(intVal.get(lineArgs[3]));
+                if (intVarName.contains(lineArgs[3])) max = Integer.parseInt(getVar("int", lineArgs[3]));
                 else max = Integer.parseInt(lineArgs[3]);
                 int val = random.nextInt(min, max);
-                addVar("int", lineArgs[1], val);
+                addVar("int", lineArgs[1], String.valueOf(val));
             }
             else {
-                System.out.println("Not enough values!\nnin.rand <non-existing variable name> <min> <max>;");
+                System.out.println("\nNot enough values!\nnin.rand non-existing-variable-name min max;");
                 callForError();
             }
-        }*/
+        }
 
         else {
             callForError();
