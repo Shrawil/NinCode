@@ -55,12 +55,14 @@ Note: "float" support is planned for future versions.
 Outputs either a string literal or a variable value.
 
 Supports escape sequences:
+
 `
 \n  new line
 \t  tab
 \b  backspace
 \r  carriage return
 `
+
 Syntax
 
 nin.out argument;
