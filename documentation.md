@@ -66,13 +66,13 @@ Outputs either a string literal or a variable value.
 
 ##### Syntax
 
-nin.out argument;
+`nin.out argument;`
 
 ##### Examples
 
 `nin.out "Hello World!";`
 
-` nin.out variableName;`
+`nin.out variableName;`
 
 ##### Constraints
 
