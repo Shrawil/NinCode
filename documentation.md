@@ -16,7 +16,7 @@ Stores integer values.
 
 ---
 
-### "astr"
+### "str"
 
 Stores string values.  
 A single character is also treated as a string.
